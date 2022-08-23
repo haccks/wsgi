@@ -13,7 +13,7 @@ def view(request):
     6. 404
 
     :param request: http request
-    :return: A tuple of response, HTTP status code as byte string
+    :return: A tuple of response and HTTP status code as byte string
     """
 
     if request['method'] == 'GET':

@@ -18,8 +18,9 @@ HOT_RELOAD = True
 
 
 def application(environ, start_response):
-    """Required application object (callable) as per WSGI specifications.
+    """Entry point of the application side
 
+    Required application object (callable) as per WSGI specifications.
     It must call the callback method passed as argument by the server
     side before returning the response.
     :param environ: A Dictionary containing CGI like variables
