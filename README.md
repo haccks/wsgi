@@ -1,5 +1,5 @@
 # wsgi
-*A server and application side as per WSGI specifications.*
+*A server and application side as per [WSGI specifications- PEP 3333](For more information visit [pep 3333](https://peps.python.org/pep-3333/)).*
 
 ### How to run:
 Run `python3 web_server.py`. It will start a server at `http://localhost:8080/`.
