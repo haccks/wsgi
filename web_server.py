@@ -40,6 +40,7 @@ def handle_request():
             Send back the HTTP status code and response header as byte string over
             the socket to the client. It uses the same connection object as the
             enclosing function.
+            More info: https://peps.python.org/pep-3333/#the-start-response-callable
             :param status: Standard HTTP status code
             :param headers: Standard HTTP response header
             """
@@ -108,6 +109,7 @@ def to_environ(method, path, protocol, headers, body):
     Populate and return a dictionary with CGI like variables for each
     received request from the client. In simple word:
     it de-assemble the raw HTTP request into a dictionary.
+    More info: https://peps.python.org/pep-3333/#environ-variables
     :param method: HTTP method
     :param path: URI
     :param protocol: HTTP protocol
@@ -121,7 +123,7 @@ def to_environ(method, path, protocol, headers, body):
         'PATH_INFO': path.split('?')[0] if '?' in path else path,
         'SERVER_PROTOCOL': protocol,
         'QUERY_STRING': get_query_string(path),
-        'wsgi.input': io.StringIO(body),  # Must be a file-like object and io.StringIO returns-file like object
+        'wsgi.input': io.StringIO(body),  # Must be a file-like object (io.StringIO returns-file like object)
         'CONTENT_LENGTH': headers['Content-Length'] if 'Content-Length' in headers else None
         # format_headers(headers)
     }

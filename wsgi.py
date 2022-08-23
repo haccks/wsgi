@@ -23,6 +23,7 @@ def application(environ, start_response):
     Required application object (callable) as per WSGI specifications.
     It must call the callback method passed as argument by the server
     side before returning the response.
+    More info: https://peps.python.org/pep-3333/#the-application-framework-side
     :param environ: A Dictionary containing CGI like variables
     :param start_response: Callback method passed from server side
     :return: The response body as "byte strings wrapped in an iterable"
