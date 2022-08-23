@@ -1,8 +1,9 @@
 """WSGI server side
 
 WSGI complaint web server which takes http request
-from client side and responsible for returning corresponding http response.
-It is a small http web server (or application server) just like gunicorn or uWSGI.
+from client (user agent) and responsible for returning corresponding http response.
+It is a small http web server (or application server) just like gunicorn or uWSGI,
+but very minimal :).
 """
 
 
