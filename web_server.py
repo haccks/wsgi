@@ -7,7 +7,7 @@ just like gunicorn or uWSGI, but very minimal :). It should
 
 1. Understand HTTP
 2. Can invoke WSGI application side
-3. Can pre-fork
+3. Can pre-fork (out of scope of this fun project)
 """
 
 
