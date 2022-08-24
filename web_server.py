@@ -3,7 +3,11 @@
 WSGI complaint web server which takes http request from client
 (user agent) and responsible for returning  corresponding http
 response. It is a small http web server (or application server)
-just like gunicorn or uWSGI, but very minimal :).
+just like gunicorn or uWSGI, but very minimal :). It should
+
+1. Understand HTTP
+2. Can invoke WSGI application side
+3. Can pre-fork
 """
 
 
@@ -22,12 +26,12 @@ def handle_request():
     """Entry point of the server (WSGI complaint).
 
     This basically does the following:
-    1. Listen and accept requests using Unix sockets
+    1. Listen and accept http requests using Unix sockets
     2. Parse received http requests
     3. Create a dictionary containing CGI like variables
     4. Invoke the application object provided by applications side of WSGI interface
     5. Finally, send back the http response to the client
-    6. It also provides a closure like callback method that takes sttp status
+    6. It also provides a closure like callback method that takes http status
         and http response header as an argument
     """
 
